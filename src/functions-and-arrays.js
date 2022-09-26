@@ -55,19 +55,23 @@ function sumNumbers(numbers) {
 // X should return zero if receives an empty array when called
 // should return the sum with one number array
 // X should return zero if all elements are zero
-// should return the sum when passed array of numbers
+// X should return the sum when passed array of numbers
 // should return the sum when passed array of strings
 // should return the sum when passed array of mixed strings and numbers -
 // should return the sum when passed array of mixed strings, numbers and booleans -
 // should throw an error when unsupported data type (object or array) present in the array
 function sum(arr) {
   let result = 0;
-  // if (typeof (arr == string){
   //   parseInt(arr)
   // }
-  for (let j = 0; j < arr.length; j++)
-  result = result + arr[j];
+  for (let j = 0; j < arr.length; j++) {
+    result = result + arr[j];
+  }
   
+
+  let av = wordsArr.join('').length
+
+
   return result;
 }
 
@@ -75,32 +79,76 @@ function sum(arr) {
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
+
+// X should declare a function named averageNumbers
+// X should return null if receives an empty array when called
+// X should return the average of a one-element array
+// X should return the average even with negative values
+// X should return the average of the array
+
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(numbersAvg) {
+  // retorna null si arriba un array buit
   if (numbersAvg.length === 0) return null;
-  
-  
+
+  //creo la variable on anire sumanthi els numeros amb un resultat incial de 0
+  let suma = 0;
+  for (let p = 0; p < numbersAvg.length; p++) {
+    suma = suma + numbersAvg[p];
+  }
+  //divideixo la suma pel nombre de numeros i els poso en una variable
+  const average = suma / numbersAvg.length;
+  //crido la variable amb el resultat final
+  return average;
+
 }
 
 
 // Level 2: Array of strings
+// X should declare a function named averageWordLength
+// X should return null if receives an empty array when called
+// X should return the average of a one-element array
+// X should return the average of a the array
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength(wordsArr) { 
+function averageWordLength(wordsArr) {
   if (wordsArr.length === 0) return null;
   let av = wordsArr.join('').length / wordsArr.length      // 10 / 4 = 2.5
-return(av)
+  return (av)
 
 }
 
-// Bonus - Iteration #4.1
-function avg(arry) { 
+// // Bonus - Iteration #4.1
+// X should declare a function named avg
+// X should return null if receives an empty array when called
+// should return the average of the array
+function avg(arry) {
   if (arry.length === 0) return null;
+  let suma = 0;
+
+  if (arry[i].typeof === Number){
+  //creo la variable on anire sumanthi els numeros amb un resultat incial de 0
+  for (let p = 0; p < arry.length; p++) {
+    suma = suma + arry[p];
+  }
+  //divideixo la suma pel nombre de numeros i els poso en una variable
+  //crido la variable amb el resultat final
+  } else if (arry[p].typeof === String){
+    suma = suma + arry.join('').length
+  }
+  const average = suma / arry.length;
+  return average;
 
 }
 
 // Iteration #5: Unique arrays
+// x should declare a function named uniquifyArray
+// x should return null if receives an empty array when called
+// should return the correct uniqified array when an array of the same elements passed as argument
+// should return the same array when no element is repeated
+// should return the uniquified array
+
 const wordsUnique = [
   'crab',
   'poison',
@@ -115,7 +163,7 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() { 
+function uniquifyArray() {
   if (uniquifyArray.length === 0) return null;
 
 }
@@ -123,12 +171,19 @@ function uniquifyArray() {
 
 
 // Iteration #6: Find elements
+
+// X should declare a function named doesWordExist
+// X should return null if receives an empty array when called
+// should return true if the word we are looking for is the only one in the array
+// should return false if the word we are looking for is not in the array
+// should return true if the word we are looking for is in the array
+
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
 function doesWordExist(wordsFind) {
   if (wordsFind.length === 0) return null;
 
- }
+}
 
 
 
