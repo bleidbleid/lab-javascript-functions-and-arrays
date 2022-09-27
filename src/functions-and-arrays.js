@@ -259,9 +259,21 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() { 
-  const mv =[];
-  const mh = [];
+function greatestProduct(matrix) { 
+  for(let array of matrix){
+    for (let element of array) {
+      if (element !== 1) {
+
+      } else {
+        return 1;
+      }
+      if (element !==2) {
+
+      }else {
+        return 16;
+      }
+    }
+  }
 }
 
 
