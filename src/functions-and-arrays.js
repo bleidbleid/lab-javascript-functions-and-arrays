@@ -1,4 +1,4 @@
-// Iteration #1: Find the maximum
+// Iteration #1: Find the maximum FET
 function maxOfTwoNumbers(n1, n2) {
   if (n1 > n2) {
     return n1;
@@ -11,7 +11,7 @@ function maxOfTwoNumbers(n1, n2) {
 
 
 
-// Iteration #2: Find longest word
+// Iteration #2: Find longest word FET
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
 function findLongestWord(words) {
@@ -32,7 +32,7 @@ function findLongestWord(words) {
 
 
 
-// Iteration #3: Calculate the sum
+// Iteration #3: Calculate the sum FET
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(numbers) {
@@ -56,21 +56,27 @@ function sumNumbers(numbers) {
 // should return the sum with one number array
 // X should return zero if all elements are zero
 // X should return the sum when passed array of numbers
+
+// FALTAN
 // should return the sum when passed array of strings
 // should return the sum when passed array of mixed strings and numbers -
 // should return the sum when passed array of mixed strings, numbers and booleans -
 // should throw an error when unsupported data type (object or array) present in the array
-function sum(arr) {
+function sum(mixArr) {
   let result = 0;
-  //   parseInt(arr)
-  // }
-  for (let j = 0; j < arr.length; j++) {
-    result = result + arr[j];
+
+  for (let j = 0; j < mixArr.length; j++) {
+
+    if (typeof mixArr[j] === "string") {
+      result += mixArr[j].length;
+    } else if (mixArr[j] === true) {
+      result += 1;
+    } else if (typeof mixArr[j] === "object") {
+      throw new Error("Unsupported data type sir or ma'am")
+    } else {
+      result += mixArr[j];
+    }
   }
-  
-
-  let av = wordsArr.join('').length
-
 
   return result;
 }
@@ -114,7 +120,7 @@ const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smar
 
 function averageWordLength(wordsArr) {
   if (wordsArr.length === 0) return null;
-  let av = wordsArr.join('').length / wordsArr.length      // 10 / 4 = 2.5
+  let av = wordsArr.join('').length / wordsArr.length;
   return (av)
 
 }
@@ -123,26 +129,29 @@ function averageWordLength(wordsArr) {
 // X should declare a function named avg
 // X should return null if receives an empty array when called
 // should return the average of the array
-function avg(arry) {
-  if (arry.length === 0) return null;
+function avg(avgArr) {
+  if (avgArr.length === 0) return null;
   let suma = 0;
 
-  if (arry[i].typeof === Number){
-  //creo la variable on anire sumanthi els numeros amb un resultat incial de 0
-  for (let p = 0; p < arry.length; p++) {
-    suma = suma + arry[p];
+  for (let i = 0; i < avgArr.length; i++) {
+    if (typeof avgArr[i] === "string") {
+      suma += avgArr[i].length;
+    } else if (avgArr[i] === true) {
+      suma += 1;
+    } else if (typeof avgArr[i] === "object") {
+      throw new Error("Unsupported data type sir or ma'am")
+    } else {
+      suma += avgArr[i];
+    }
   }
-  //divideixo la suma pel nombre de numeros i els poso en una variable
-  //crido la variable amb el resultat final
-  } else if (arry[p].typeof === String){
-    suma = suma + arry.join('').length
-  }
-  const average = suma / arry.length;
+  const average = suma / avgArr.length;
   return average;
 
 }
 
 // Iteration #5: Unique arrays
+// Take the following array, remove the duplicates, and return a new array.
+// You are more than likely going to want to check out the Array methods [`indexOf`] and [`includes`]
 // x should declare a function named uniquifyArray
 // x should return null if receives an empty array when called
 // should return the correct uniqified array when an array of the same elements passed as argument
@@ -163,9 +172,12 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {
-  if (uniquifyArray.length === 0) return null;
+function uniquifyArray(wordsUnique) {
+  if (wordsUnique.length === 0) return null;
 
+  const uniqueChars = [...new Set(wordsUnique)];
+
+  return uniqueChars;
 }
 
 
@@ -179,9 +191,12 @@ function uniquifyArray() {
 // should return true if the word we are looking for is in the array
 
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+let word;
 
-function doesWordExist(wordsFind) {
+function doesWordExist(wordsFind, word) {
   if (wordsFind.length === 0) return null;
+
+  return wordsFind.includes(word);
 
 }
 
@@ -202,7 +217,21 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() { }
+function howManyTimes(wordsCount, search) {
+
+  let count = 0;
+
+  for (let i = 0; i < wordsCount.length; i++) {
+    
+    if (wordsCount[i] === search) {
+      count++;
+      continue;
+    };
+   
+  };
+  return count;
+
+}
 
 
 
@@ -230,7 +259,10 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() { }
+function greatestProduct() { 
+  const mv =[];
+  const mh = [];
+}
 
 
 
